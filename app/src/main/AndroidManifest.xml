@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bwash.bwashcar"
+    android:versionCode="100"
+    android:versionName="1.0.0">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+
+    <permission
+        android:name="com.bwash.bwashcar.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+
+    <!-- Required -->
+    <uses-permission android:name="com.wash.washcar.permission.JPUSH_MESSAGE" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="com.wy.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+
+
+    <!-- 友盟权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+
+    <application
+        android:name="com.bwash.bwashcar.application.LTNApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.bwash.bwashcar.activities.LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bwash.bwashcar.activities.GuideActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.CompanyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.RegisterActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.FeedBackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ResetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ForgetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ForgetPasswordActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.LTNWebPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.WithDrawActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ProductDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ProductBuyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ProductBuyConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ProductTYBuyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.UserAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.UserHasAuthedActivity"
+            android:screenOrientation="portrait" />\
+        <activity
+            android:name="com.bwash.bwashcar.activities.NotificationSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.BindBankCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.BindedBankCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.AccountInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.DepositActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.GestureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ReserveSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.QRCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ParterEarnings"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.GestureEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CurrentAccountListDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.GestureVerifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ProductTYBDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CarActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.CarAddActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.ForgetTradePwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ModifyTradePwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.NoBankCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.MyInvestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CouponsActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.BalanceDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.bwash.bwashcar.activities.SetHostActivity" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.TotalAssetsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.IncomeDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.PartnerCountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.AddPartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.BirdDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ProductBuySuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ProductBuyRecordDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CurrentAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CurrentAccountOutActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CurrentAccountInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CurrentAccountOutSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.CurrentAccountInConfirmActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.CurrentAccountBuySuccessActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.DepositConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ShopDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ReserveActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.BankCardChangeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.BindCardChangeNoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.AnxintouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.HitEggsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/add_dialog" />
+
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.DepositSuccessActivity"
+            android:screenOrientation="portrait" />
+
+
+        <!--         友盟分享 -->
+
+
+        <!-- 极光推送 Required SDK核心功能-->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="com.wy.lingtouniao" />
+            </intent-filter>
+        </service>
+
+
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <category android:name="com.wy.lingtouniao" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.wy.lingtouniao" />
+            </intent-filter>
+        </activity>
+        <!-- Required SDK核心功能-->
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false"></service>
+        <!-- Required SDK核心功能-->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+
+
+        <receiver
+            android:name="com.bwash.bwashcar.receiver.MyJPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!--Optional 用户接受Rich Push Javascript 回调函数的intent-->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="com.wy.lingtouniao" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <!--meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="b3aa9dbccfbef354b8810362" />
+
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="566a814e67e58e71da003261" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" /-->
+
+
+        <!-- Talking data analystics -->
+        <!--meta-data
+            android:name="TD_APP_ID"
+            android:value="347A57A4BC8EA90EB44C6A4BD48E0F27" /-->
+        <!--meta-data
+            android:name="TD_CHANNEL_ID"
+            android:value="lingtouniao_android_channel_1000" /-->
+
+
+    </application>
+
+</manifest>

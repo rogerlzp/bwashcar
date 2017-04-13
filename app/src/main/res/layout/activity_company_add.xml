@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color1"
+    android:orientation="vertical">
+
+    <include layout="@layout/action_bar_title"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_license_type"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="@string/license_type" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/rg_license_type"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/rb_0"
+                        android:text="@string/business_entity" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/rb_1"
+                        android:text="@string/individual_business" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_has_license"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="@string/has_license" />
+
+                <com.bwash.bwashcar.view.UISwitchButton
+                    android:id="@+id/toggleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/transparent"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:textOff=""
+                    android:textOn="" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_license_name"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="@string/license_name" />
+
+                <EditText
+                    android:id="@+id/et_license_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:gravity="right|center"
+                    android:hint="@string/license_name_hint" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_license_reg"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="@string/license_reg" />
+
+                <EditText
+                    android:id="@+id/et_license_reg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:gravity="right|center"
+                    android:hint="@string/license_reg_hint" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_owner_name"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="@string/owner_name" />
+
+                <EditText
+                    android:id="@+id/et_owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:gravity="right|center"
+                    android:hint="@string/owner_name_hint" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_owner_id"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="@string/owner_id" />
+
+                <EditText
+                    android:id="@+id/et_owner_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:gravity="right|center"
+                    android:hint="@string/owner_id_hint" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/rl_pics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="49dp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="@string/upload_attach" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background_color1"></View>
+
+
+                <ImageView
+                    android:id="@+id/iv_license_image"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/circle_shape" />
+
+                <Button
+                    android:id="@+id/btn_license"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_submit_no_state"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/upload_license" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/background_color1"></View>
+
+
+                <ImageView
+                    android:id="@+id/iv_owner_id_front"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/circle_shape" />
+
+                <Button
+                    android:id="@+id/btn_owner_id_front"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_submit_no_state"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/upload_owner_id_front" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/background_color1"></View>
+
+
+                <ImageView
+                    android:id="@+id/iv_owner_id_back"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/circle_shape" />
+
+                <Button
+                    android:id="@+id/btn_owner_id_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_submit_no_state"
+                    android:paddingBottom="6dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/upload_owner_id_back" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_service_date"
+
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/button_radius"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
