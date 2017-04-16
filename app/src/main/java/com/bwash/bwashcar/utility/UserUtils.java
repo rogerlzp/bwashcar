@@ -60,7 +60,7 @@ public class UserUtils {
         RequestParams mReqParams = new RequestParams();
         mReqParams.add(LTNConstants.CLIENT_TYPE_PARAM, LTNConstants.CLIENT_TYPE_MOBILE);
         mReqParams.add(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
-        //TODO: 添加错误或者失败的跳转
+
         LTNHttpClient.getLTNHttpClient().get(LTNConstants.ACCESS_URL.MY_USER_INFO_URL, mReqParams,
                 new JsonHttpResponseHandler() {
                     public void onSuccess(int statusCode, Header[] headers, JSONObject jsonObject) {

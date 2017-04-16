@@ -384,7 +384,7 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
                         if (mProgressdialog.isShowing()) {
                             mProgressdialog.cancel();
                         }
-                        // lvProduct.onRefreshComplete();
+                        // lvShop.onRefreshComplete();
                     }
                 });
 

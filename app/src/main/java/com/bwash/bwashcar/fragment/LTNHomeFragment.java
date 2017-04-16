@@ -15,7 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bwash.bwashcar.activities.CompanyActivity;
+import com.bwash.bwashcar.activities.ConfirmReserveActivity;
+import com.bwash.bwashcar.activities.ShopActivity;
 import com.bwash.bwashcar.imageloader.ImageLoaderProxy;
+import com.bwash.bwashcar.model.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.bwash.bwashcar.R;
@@ -89,6 +92,8 @@ public class LTNHomeFragment extends BaseFragment implements View.OnClickListene
 
     String dtUrl = null;
     boolean isHidden = false;
+
+    Button btn_to_confirm, btn_shop;
 
     @Override
 
@@ -288,16 +293,39 @@ public class LTNHomeFragment extends BaseFragment implements View.OnClickListene
 
         id_viewflow.setOnClickListener(this);
 
+        btn_to_confirm = (Button) rootView.findViewById(R.id.btn_to_confirm);
+        btn_to_confirm.setOnClickListener(this);
+
+        btn_shop = (Button) rootView.findViewById(R.id.btn_shop);
+        btn_shop.setOnClickListener(this);
+
 
     }
 
     @Override
     public void onClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             case R.id.id_viewflow:
-                Intent intent = new Intent(this.getActivity(), CompanyActivity.class);
+                intent = new Intent(this.getActivity(), CompanyActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btn_to_confirm:
+                intent = new Intent(this.getActivity(), ConfirmReserveActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_shop:
+                if (User.getUserInstance().getUserInfo().getCompanyId() == -1) {
+                    // 还没有创建公司
+                    intent = new Intent(this.getActivity(), CompanyActivity.class);
+                    startActivity(intent);
+                } else {
+                    intent = new Intent(this.getActivity(), ShopActivity.class);
+                    startActivity(intent);
+                }
+                break;
+
+
         }
     }
 

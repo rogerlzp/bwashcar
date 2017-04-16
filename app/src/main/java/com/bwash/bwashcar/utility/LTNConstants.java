@@ -247,13 +247,26 @@ public class LTNConstants {
         public static String RESERVE_LIST_URL = HOST + "/breserve/list";
 
         //店铺列表LIST
-        public static String GET_SHOPS_URL = HOST + "/bshop/lists";
+        public static String GET_SHOPS_URL = HOST + "/bshop/list";
 
         //B端用户新建用户 新建用户
         public static String ADD_USER_URL = HOST + "/buser/add";
 
         //B端用户新建用户 新建用户
         public static String COMPANY_ADD_URL = HOST + "/bcompany/add";
+
+        //B端用户新建用户 新建用户
+        public static String ADD_SHOP_URL = HOST + "/bshop/add";
+
+        //B端用户新建用户 新建用户
+        public static String ADD_SHOPPRODUCT_URL = HOST + "/bshop/add/product";
+
+
+        //商家获取订单
+        public static String GET_BRSERVE_URL = HOST + "/buser/reserve/list";
+
+        //商家获取订单
+        public static String CONFIRM_BRSERVE_URL = HOST + "/buser/reserve/confirm";
 
 
         // 七牛云uploadToken 有效期1个小时
@@ -519,7 +532,9 @@ public class LTNConstants {
     public static String TYPE = "type";
 
     //我的投资
-    public static String STATUS = "Status";
+    public static String STATUS = "status";
+    public static String UPDATED_STATUS = "updatedStatus";
+
     public static String INVESTMENTS = "investments";
     public static String LIST_PARTNER_EARNINGS = "listPartnerEarnings";
 
@@ -767,6 +782,9 @@ public class LTNConstants {
     public static String SHOP_TAG = "shopTag";
     public static String DISCOUNT_BEGINTIME = "discountBeginTime";
     public static String DISCOUNT_ENDTIME = "discountEndTime";
+    public static String SHOP_ADDRESS = "shopAddress";
+    public static String SHOP_WASHSPACE = "shopWashspace";
+
 
     // car 参数
     public static String CAR_PLATE = "plateNumber";
@@ -777,16 +795,26 @@ public class LTNConstants {
     public static String CAR_ID = "carId";
     public static String CAR = "CAR";
     public static String CAR_NO = "carNo";
-    public static String SERVICE_ID = "serviceId";
-    public static String SERVICE_NAME = "serviceName";
+
     public static String SHOP_SERVICE = "SHOP_SERVICE";
     public static String SHOPSERVICE_LIST = "shopServiceList";
+    // 服务
+    public static String SERVICE_ID = "serviceId";
+    public static String SERVICE_NAME = "serviceName";
+    // public static String SERVICE_PRICE = "servicePrice";
+
+    //和B段保持一直
+    public static String SERVICE_TIME_CONSUME = "timeConsume";
+    public static String SERVICE_PRICE = "originalPrice";
+    public static String SERVICE_DESC = "desc";
+
 
     //RESERVE 参数
     public static String RESERVE_BEGINTIME = "reserveBegintime";
     public static String RESERVED_PRODUCT_LIST = "reserveProductList";
     public static String IS_RESERVE = "IS_RESERVE";
     public static String IS_FROM_RESERVE = "IS_FROM_RESERVE";
+    public static String RESERVE_NO = "reserveNo";
 
 
     //角色
@@ -796,6 +824,8 @@ public class LTNConstants {
     public static String QINIU_UPLOAD_TOKEN = "uploadToken";
 
     // company 参数
+
+    public static String COMPANY_ID = "companyId";
     public static String COMPANY_TYPE = "companyType";
     public static String COMPANY_NAME = "companyName";
     public static String LICENSE_NAME = "licenseName";//营业执照名称
@@ -812,6 +842,7 @@ public class LTNConstants {
 
     public static final int ADD_CAR = 9000;
     public static final int ADD_CAR_SUCCESS = 9001;
+    public static final int ADD_BSHOP_PRODUCT_SUCCESS = 9002;
 
 
 }

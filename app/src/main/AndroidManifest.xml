@@ -82,6 +82,24 @@
         <activity
             android:name="com.bwash.bwashcar.activities.CompanyActivity"
             android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.ShopAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bwash.bwashcar.activities.ShopActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.BShopProductAddActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.bwash.bwashcar.activities.ConfirmReserveActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name="com.bwash.bwashcar.activities.RegisterActivity"
             android:windowSoftInputMode="adjustResize" />

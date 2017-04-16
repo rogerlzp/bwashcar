@@ -491,5 +491,31 @@
     <string name="get_id_back_image">请上传身份证反面照</string>
     <string name="license_image_url">请上传营业执照</string>
 
+    <string name="confirm_reserve">待处理订单</string>
+
+    <string name="new_shop">创建店铺</string>
+
+    <string name="shop_name">店铺名称</string>
+    <string name="input_shop_name">请输入店铺名称</string>
+
+    <string name="address_name">店铺位置</string>
+    <string name="input_address_name">请输入店铺位置</string>
+    <string name="work_time">工作时间</string>
+    <string name="input_work_time">请输入工作时间</string>
+
+    <string name="add_service">添加服务</string>
+    <string name="washspace_num">洗车位数</string>
+    <string name="washspace_num_hint">请输入洗车位数</string>
+
+    <string name="service_name">服务名称</string>
+    <string name="service_name_hint">请输入服务名称</string>
+    <string name="service_price">服务价格</string>
+    <string name="service_price_hint">请输入服务价格</string>
+    <string name="service_time">服务时间</string>
+    <string name="service_time_hint">请输入服务时间</string>
+    <string name="success_create_shop">创建店铺成功</string>
+    <string name="new_shop_product">创建店铺服务</string>
+    <string name="success_new_shop_product">创建店铺服务成功</string>
+
 
 </resources>

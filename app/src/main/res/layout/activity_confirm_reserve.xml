@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/action_bar_title"></include>
+
+    <View
+        android:id="@+id/vHDivider"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/background_color1" />
+
+    <com.bwash.bwashcar.library.PullToRefreshListView
+        android:id="@+id/lv_reserves"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        ptr:ptrAnimationStyle="flip" />
+
+</LinearLayout>

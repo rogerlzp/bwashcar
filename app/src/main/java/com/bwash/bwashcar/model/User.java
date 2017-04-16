@@ -239,6 +239,45 @@ public class User {
         private String agreementCZ;   // 是否签订免密充值  1：是  0:否
         private String agreementTZ; // 是否签订免密投资  1：是  0:否
 
+
+        // 公司信息
+        private String roleName; // 角色名称
+        private long companyId; // 公司ID
+        private long shopId; // 店铺ID
+        private int companyStatus; // 公司状态
+
+        public int getCompanyStatus() {
+            return companyStatus;
+        }
+
+        public void setCompanyStatus(int companyStatus) {
+            this.companyStatus = companyStatus;
+        }
+
+        public String getRoleName() {
+            return roleName;
+        }
+
+        public void setRoleName(String roleName) {
+            this.roleName = roleName;
+        }
+
+        public long getCompanyId() {
+            return companyId;
+        }
+
+        public void setCompanyId(long companyId) {
+            this.companyId = companyId;
+        }
+
+        public long getShopId() {
+            return shopId;
+        }
+
+        public void setShopId(long shopId) {
+            this.shopId = shopId;
+        }
+
         public String getAgreementCZ() {
             return agreementCZ;
         }
