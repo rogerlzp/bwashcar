@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ import java.util.HashMap;
 
 public class ShopAddActivity extends BaseActivity {
 
-    TextView tv_shop, tv_address, tv_worktime, tv_washspace;
+    EditText et_shop, et_address, et_worktime, et_washspace;
 
     Button btn_submit;
 
@@ -54,10 +55,10 @@ public class ShopAddActivity extends BaseActivity {
 
     public void initView() {
         ((TextView) findViewById(R.id.title)).setText(getString(R.string.new_shop));
-        tv_shop = (TextView) findViewById(R.id.tv_shop);
-        tv_address = (TextView) findViewById(R.id.tv_address);
-        tv_worktime = (TextView) findViewById(R.id.tv_worktime);
-        tv_washspace = (TextView) findViewById(R.id.tv_washspace);
+        et_shop = (EditText) findViewById(R.id.et_shop);
+        et_address = (EditText) findViewById(R.id.et_address);
+        et_worktime = (EditText) findViewById(R.id.et_worktime);
+        et_washspace = (EditText) findViewById(R.id.et_washspace);
         btn_submit = (Button) findViewById(R.id.btn_submit);
         btn_submit.setOnClickListener(this);
     }
@@ -78,7 +79,10 @@ public class ShopAddActivity extends BaseActivity {
 
     //TODO: validate
     public void validateInput() {
-
+        shopName = et_shop.getText().toString().trim();
+        shopAddress = et_address.getText().toString().trim();
+        shopWorktime = et_worktime.getText().toString().trim();
+        shopWashspace = et_washspace.getText().toString().trim();
     }
 
 
@@ -105,19 +109,18 @@ public class ShopAddActivity extends BaseActivity {
         mReqParams.put(LTNConstants.SHOP_NAME, shopName);
         mReqParams.put(LTNConstants.SHOP_ADDRESS, shopAddress);
         mReqParams.put(LTNConstants.SHOP_WORK_TIME, shopWorktime);
-
         mReqParams.put(LTNConstants.SHOP_WASHSPACE, shopWashspace);
 
 
         mReqParams.put(LTNConstants.COMPANY_ID, "" + User.getUserInstance().getUserInfo().getCompanyId());
 
-        String sessionKey = LTNApplication.getInstance().getSessionKey();
-        if (sessionKey != null) {
-            mReqParams.put(LTNConstants.SESSION_KEY, sessionKey);
-        }
+
+        mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
+
         // TODO: 上传location
 
-        WCOKHttpClient.getOkHttpClient().requestAsyn(LTNConstants.ACCESS_URL.ADD_SHOP_URL, WCOKHttpClient.TYPE_GET, mReqParams,
+        WCOKHttpClient.getOkHttpClient().requestAsyn(LTNConstants.ACCESS_URL.ADD_SHOP_URL, WCOKHttpClient.TYPE_GET,
+                mReqParams,
                 new ReqCallBack<JSONObject>() {
 
                     @Override
@@ -131,7 +134,7 @@ public class ShopAddActivity extends BaseActivity {
 
                                 Intent intent = new Intent(ShopAddActivity.this, BShopProductAddActivity.class);
                                 Bundle b = new Bundle();
-                                if (StringUtils.isNullOrEmpty(shopId)) {
+                                if (!StringUtils.isNullOrEmpty(shopId)) {
                                     Toast.makeText(ShopAddActivity.this, getResources().getString(R.string.success_create_shop),
                                             Toast.LENGTH_LONG).show();
                                     b.putString(LTNConstants.SHOP_ID, shopId);

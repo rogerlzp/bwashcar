@@ -32,8 +32,8 @@
             android:textColor="@color/label_grey1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_shop"
+        <EditText
+            android:id="@+id/et_shop"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_alignTop="@id/tv_shop_label"
@@ -65,8 +65,8 @@
             android:textColor="@color/label_grey1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_address"
+        <EditText
+            android:id="@+id/et_address"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_toRightOf="@id/tv_label2"
@@ -95,8 +95,8 @@
             android:textColor="@color/label_grey1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_worktime"
+        <EditText
+            android:id="@+id/et_worktime"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_toRightOf="@id/tv_label3"
@@ -132,8 +132,8 @@
             android:textColor="@color/label_grey1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_washspace"
+        <EditText
+            android:id="@+id/et_washspace"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_toRightOf="@id/tv_label4"

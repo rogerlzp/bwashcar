@@ -3,6 +3,7 @@ package com.bwash.bwashcar.activities;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,17 +25,16 @@ import java.util.HashMap;
 
 public class BShopProductAddActivity extends BaseActivity {
 
-    TextView tv_service_name, tv_service_price, tv_service_time;
-    Button btn_submit;
+    EditText et_service_name, et_service_price, et_service_time;
 
     String serviceName, servicePrice, serviceTime, shopId;
 
-    String serviceId = "10001"; //hardcord it correctly
+    String serviceId = "10001"; //hardcode it now
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_add);
+        setContentView(R.layout.activity_bshopproduct_add);
         initView();
         initData();
         shopId = getIntent().getExtras().getString(LTNConstants.SHOP_ID, "");
@@ -42,11 +42,10 @@ public class BShopProductAddActivity extends BaseActivity {
 
     public void initView() {
         ((TextView) findViewById(R.id.title)).setText(getString(R.string.new_shop_product));
-        tv_service_name = (TextView) findViewById(R.id.tv_service_name);
-        tv_service_price = (TextView) findViewById(R.id.tv_service_price);
-        tv_service_time = (TextView) findViewById(R.id.tv_service_time);
-        btn_submit = (Button) findViewById(R.id.btn_submit);
-        btn_submit.setOnClickListener(this);
+        et_service_name = (EditText) findViewById(R.id.et_service_name);
+        et_service_price = (EditText) findViewById(R.id.et_service_price);
+        et_service_time = (EditText) findViewById(R.id.et_service_time);
+        findViewById(R.id.btn_submit).setOnClickListener(this);
     }
 
     public void initData() {
@@ -66,6 +65,11 @@ public class BShopProductAddActivity extends BaseActivity {
     //TODO: validate
     public void validateInput() {
 
+        serviceName = et_service_name.getText().toString().trim();
+        serviceTime = et_service_time.getText().toString().trim();
+        servicePrice = et_service_price.getText().toString().trim();
+        //TODO: 修改serviceId获取方式
+
     }
 
     public void addShopProduct() {
@@ -81,13 +85,10 @@ public class BShopProductAddActivity extends BaseActivity {
         mReqParams.put(LTNConstants.SERVICE_PRICE, servicePrice);
         mReqParams.put(LTNConstants.SERVICE_TIME_CONSUME, serviceTime);
 
-
         mReqParams.put(LTNConstants.SHOP_ID, shopId);
 
-        String sessionKey = LTNApplication.getInstance().getSessionKey();
-        if (sessionKey != null) {
-            mReqParams.put(LTNConstants.SESSION_KEY, sessionKey);
-        }
+        mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
+
         // TODO: 上传location
 
         WCOKHttpClient.getOkHttpClient().requestAsyn(LTNConstants.ACCESS_URL.ADD_SHOPPRODUCT_URL, WCOKHttpClient.TYPE_GET, mReqParams,

@@ -34,7 +34,7 @@ import java.util.HashMap;
  * Created by zhengpingli on 2017/4/14.
  */
 
-public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRefreshListener2<ListView>  {
+public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRefreshListener2<ListView> {
 
     TextView tv_new_shop;
 
@@ -55,7 +55,7 @@ public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRe
     public void initView() {
         ((TextView) findViewById(R.id.title)).setText(getString(R.string.confirm_reserve));
         findViewById(R.id.tv_new_shop).setOnClickListener(this);
-        lvShop =(PullToRefreshListView)findViewById(R.id.lv_shops);
+        lvShop = (PullToRefreshListView) findViewById(R.id.lv_shops);
     }
 
     public void initData() {
@@ -98,10 +98,9 @@ public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRe
         mReqParams.put(LTNConstants.CLIENT_TYPE_PARAM, LTNConstants.CLIENT_TYPE_MOBILE);
         mReqParams.put(LTNConstants.CURRENT_PAGE, String.valueOf(page));
         mReqParams.put(LTNConstants.PAGE_SIZE, String.valueOf(LTNConstants.PAGE_COUNT));
-        String sessionKey = LTNApplication.getInstance().getSessionKey();
-        if (sessionKey != null) {
-            mReqParams.put(LTNConstants.SESSION_KEY, sessionKey);
-        }
+
+        mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
+
         // TODO: 上传location
 
         WCOKHttpClient.getOkHttpClient(this).requestAsyn(LTNConstants.ACCESS_URL.GET_SHOPS_URL,
@@ -117,7 +116,7 @@ public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRe
                                 }
 
                                 JSONObject dataObj = (JSONObject) jsonObject.get(LTNConstants.DATA);
-                                JSONArray resultArray = (JSONArray) dataObj.get(LTNConstants.SHOP_LIST);
+                                JSONArray resultArray = (JSONArray) dataObj.get(LTNConstants.LIST);
                                 ArrayList<Shop> shops = new Gson().fromJson(resultArray.toString(),
                                         new TypeToken<ArrayList<Shop>>() {
                                         }.getType());
@@ -158,10 +157,9 @@ public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRe
 
         mReqParams.put(LTNConstants.CURRENT_PAGE, "0");
         mReqParams.put(LTNConstants.PAGE_SIZE, String.valueOf(LTNConstants.PAGE_COUNT + page * LTNConstants.PAGE_COUNT));
-        String sessionKey = LTNApplication.getInstance().getSessionKey();
-        if (sessionKey != null) {
-            mReqParams.put(LTNConstants.SESSION_KEY, sessionKey);
-        }
+
+        mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
+
         // TODO: 上传location
 
         WCOKHttpClient.getOkHttpClient().requestAsyn(LTNConstants.ACCESS_URL.GET_SHOPS_URL, WCOKHttpClient.TYPE_GET, mReqParams,
@@ -177,7 +175,7 @@ public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRe
                                 }
 
                                 JSONObject dataObj = (JSONObject) jsonObject.get(LTNConstants.DATA);
-                                JSONArray resultArray = (JSONArray) dataObj.get(LTNConstants.SHOP_LIST);
+                                JSONArray resultArray = (JSONArray) dataObj.get(LTNConstants.LIST);
                                 ArrayList<Shop> shops = new Gson().fromJson(resultArray.toString(),
                                         new TypeToken<ArrayList<Shop>>() {
                                         }.getType());
@@ -230,7 +228,7 @@ public class ShopActivity extends BaseActivity implements PullToRefreshBase.OnRe
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         refreshCurrent(true);
     }

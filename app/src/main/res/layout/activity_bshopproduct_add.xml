@@ -24,8 +24,8 @@
             android:textColor="@color/label_grey1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_service_name"
+        <EditText
+            android:id="@+id/et_service_name"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_toRightOf="@id/tv_label9"
@@ -55,8 +55,8 @@
             android:textColor="@color/label_grey1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_service_price"
+        <EditText
+            android:id="@+id/et_service_price"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_toRightOf="@id/tv_label8"
@@ -87,8 +87,8 @@
             android:textColor="@color/label_grey1"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_service_time"
+        <EditText
+            android:id="@+id/et_service_time"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_toRightOf="@id/tv_label7"
