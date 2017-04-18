@@ -116,7 +116,6 @@ public class ReserveAdapter extends BaseAdapter {
         ReserveAdapter.CancelListener cancelListener = new ReserveAdapter.CancelListener(ctx, bReserve);
         holder.tv_cancel.setOnClickListener(cancelListener);
 
-        // 首先判断是否是体验标
 
 
         return convertView;
