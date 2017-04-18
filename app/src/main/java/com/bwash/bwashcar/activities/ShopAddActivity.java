@@ -107,15 +107,12 @@ public class ShopAddActivity extends BaseActivity {
         mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
 
         mReqParams.put(LTNConstants.SHOP_NAME, shopName);
-        mReqParams.put(LTNConstants.SHOP_ADDRESS, shopAddress);
+        mReqParams.put(LTNConstants.SHOP_LOCATION, shopAddress);
         mReqParams.put(LTNConstants.SHOP_WORK_TIME, shopWorktime);
         mReqParams.put(LTNConstants.SHOP_WASHSPACE, shopWashspace);
 
-
         mReqParams.put(LTNConstants.COMPANY_ID, "" + User.getUserInstance().getUserInfo().getCompanyId());
 
-
-        mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
 
         // TODO: 上传location
 

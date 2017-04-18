@@ -767,7 +767,7 @@ public class LTNConstants {
     //SHOP
     public static String SHOP_NAME = "shopName";
     public static String SHOP_ID = "shopId";
-    public static String SHOP_LOCATION = "shopLocation";
+    //   public static String SHOP_LOCATION = "shopLocation";
     public static String WAITING_TIME = "waitingTime";
     public static String LATITUDE = "latitude";
     public static String LONGITUDE = "longitude";
@@ -783,7 +783,8 @@ public class LTNConstants {
     public static String DISCOUNT_BEGINTIME = "discountBeginTime";
     public static String DISCOUNT_ENDTIME = "discountEndTime";
     public static String SHOP_ADDRESS = "shopAddress";
-    public static String SHOP_WASHSPACE = "shopWashspace";
+    public static String SHOP_LOCATION = "shopLocation";
+    public static String SHOP_WASHSPACE = "washSpace";
 
 
     // car 参数
@@ -815,6 +816,9 @@ public class LTNConstants {
     public static String IS_RESERVE = "IS_RESERVE";
     public static String IS_FROM_RESERVE = "IS_FROM_RESERVE";
     public static String RESERVE_NO = "reserveNo";
+
+    //待解析的product
+    public static String RESERVE_PRODUCT_LIST = "reserveProductList";
 
 
     //角色

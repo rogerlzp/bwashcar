@@ -18,6 +18,7 @@ import com.bwash.bwashcar.application.LTNApplication;
 import com.bwash.bwashcar.imageloader.ImageLoaderProxy;
 import com.bwash.bwashcar.model.BReserve;
 import com.bwash.bwashcar.model.Shop;
+import com.bwash.bwashcar.model.ShopService;
 import com.bwash.bwashcar.net.ReqCallBack;
 import com.bwash.bwashcar.net.WCOKHttpClient;
 import com.bwash.bwashcar.utility.LTNConstants;
@@ -34,6 +35,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by zhengpingli on 2017/4/13.
@@ -96,7 +98,12 @@ public class ReserveAdapter extends BaseAdapter {
         if (!StringUtils.isNullOrEmpty(String.valueOf(bReserve.getCustomerCredit()))) {
             holder.tv_credit.setText("" + bReserve.getCustomerCredit());
         }
-        holder.tv_reserve_name.setText(bReserve.getReserveServiceName());
+
+        List<ShopService> reserveProductList = bReserve.getReserveProductList();
+        if (reserveProductList.size() != 0) {
+            holder.tv_reserve_name.setText(reserveProductList.get(0).getServiceName());
+        }
+
         holder.tv_reserve_time.setText(bReserve.getReserveServiceTime());
 
         if (!StringUtils.isNullOrEmpty(String.valueOf(bReserve.getCustomerImageUrl()))) {
@@ -158,7 +165,7 @@ public class ReserveAdapter extends BaseAdapter {
 
     }
 
-   public interface ConfirmInterface {
+    public interface ConfirmInterface {
         public void onConfirmClicked(BReserve bReserve);
     }
 
@@ -192,8 +199,6 @@ public class ReserveAdapter extends BaseAdapter {
     }
 
 
-
-
     class CancelListener implements View.OnClickListener {
         BReserve bReserve;
         public Context ctx;
@@ -215,6 +220,7 @@ public class ReserveAdapter extends BaseAdapter {
             Intent intent = new Intent(ctx, ShopDetailActivity.class);
             Bundle bundle = new Bundle();
             intent.putExtras(bundle);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             ctx.startActivity(intent);
         }
 

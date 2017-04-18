@@ -15,6 +15,7 @@ import com.bwash.bwashcar.application.LTNApplication;
 import com.bwash.bwashcar.library.PullToRefreshBase;
 import com.bwash.bwashcar.library.PullToRefreshListView;
 import com.bwash.bwashcar.model.BReserve;
+import com.bwash.bwashcar.model.ShopService;
 import com.bwash.bwashcar.net.ReqCallBack;
 import com.bwash.bwashcar.net.WCOKHttpClient;
 import com.bwash.bwashcar.utility.LTNConstants;
@@ -130,10 +131,22 @@ public class ConfirmReserveActivity extends BaseActivity implements PullToRefres
 
                                 JSONObject dataObj = (JSONObject) jsonObject.get(LTNConstants.DATA);
                                 JSONArray resultArray = (JSONArray) dataObj.get(LTNConstants.LIST);
-                                ArrayList<BReserve> shops = new Gson().fromJson(resultArray.toString(),
-                                        new TypeToken<ArrayList<BReserve>>() {
-                                        }.getType());
-                                if (shops != null) {
+
+                                ArrayList<BReserve> shops = new ArrayList<BReserve>();
+                                for (int i = 0; i < resultArray.length(); i++) {
+                                    ArrayList<ShopService> mShopServices = new Gson().fromJson(((JSONObject) resultArray.get(i))
+                                                    .getJSONArray(LTNConstants.RESERVE_PRODUCT_LIST).toString(),
+                                            new TypeToken<ArrayList<ShopService>>() {
+                                            }.getType());
+
+                                    BReserve bReserve = new Gson().fromJson(((JSONObject) resultArray.get(i)).toString(), BReserve.class);
+                                    bReserve.setReserveProductList(mShopServices);
+                                    shops.add(bReserve);
+                                }
+//                                ArrayList<BReserve> shops = new Gson().fromJson(resultArray.toString(),
+//                                        new TypeToken<ArrayList<BReserve>>() {
+//                                        }.getType());
+                                if (shops.size() != 0) {
                                     if (isPullDownToRefresh) {
                                         mBReserves.clear();
                                     }
@@ -193,10 +206,19 @@ public class ConfirmReserveActivity extends BaseActivity implements PullToRefres
 
                                 JSONObject dataObj = (JSONObject) jsonObject.get(LTNConstants.DATA);
                                 JSONArray resultArray = (JSONArray) dataObj.get(LTNConstants.LIST);
-                                ArrayList<BReserve> shops = new Gson().fromJson(resultArray.toString(),
-                                        new TypeToken<ArrayList<BReserve>>() {
-                                        }.getType());
-                                if (shops != null) {
+                                ArrayList<BReserve> shops = new ArrayList<BReserve>();
+                                for (int i = 0; i < resultArray.length(); i++) {
+                                    ArrayList<ShopService> mShopServices = new Gson().fromJson(((JSONObject) resultArray.get(i))
+                                                    .getJSONArray(LTNConstants.RESERVE_PRODUCT_LIST).toString(),
+                                            new TypeToken<ArrayList<ShopService>>() {
+                                            }.getType());
+
+                                    BReserve bReserve = new Gson().fromJson(((JSONObject) resultArray.get(i)).toString(), BReserve.class);
+                                    bReserve.setReserveProductList(mShopServices);
+                                    shops.add(bReserve);
+                                }
+
+                                if (shops.size() != 0) {
                                     if (isPullDownToRefresh) {
                                         mBReserves.clear();
                                     }

@@ -5,6 +5,8 @@ import android.widget.TextView;
 
 import com.bwash.bwashcar.R;
 
+import java.util.List;
+
 /**
  * Created by zhengpingli on 2017/4/13.
  */
@@ -33,6 +35,16 @@ public class BReserve {
 
     private short status; //0:新建； 1:商家确认； 2:到店 3：过期
     private short isFirstReserve = 0; //1是首单，0:非首单
+
+    private List<ShopService> reserveProductList;
+
+    public List<ShopService> getReserveProductList() {
+        return reserveProductList;
+    }
+
+    public void setReserveProductList(List<ShopService> reserveProductList) {
+        this.reserveProductList = reserveProductList;
+    }
 
     public String getCustomerId() {
         return customerId;
