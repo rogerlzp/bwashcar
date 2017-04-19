@@ -88,8 +88,8 @@ public class ReserveAdapter extends BaseAdapter {
         }
 
         BReserve bReserve = mBReserves.get(position);
-        ReserveAdapter.ShopDetailListener shopDetailListener = new ReserveAdapter.ShopDetailListener(ctx, bReserve);
-        convertView.setOnClickListener(shopDetailListener);
+//        ReserveAdapter.ShopDetailListener shopDetailListener = new ReserveAdapter.ShopDetailListener(ctx, bReserve);
+//        convertView.setOnClickListener(shopDetailListener);
 
         holder.tv_customer.setText(bReserve.getCustomerName());
         holder.tv_contact.setText(bReserve.getCustomerPhone());

@@ -16,6 +16,7 @@ import com.bwash.bwashcar.library.PullToRefreshBase;
 import com.bwash.bwashcar.library.PullToRefreshListView;
 import com.bwash.bwashcar.model.BReserve;
 import com.bwash.bwashcar.model.ShopService;
+import com.bwash.bwashcar.model.User;
 import com.bwash.bwashcar.net.ReqCallBack;
 import com.bwash.bwashcar.net.WCOKHttpClient;
 import com.bwash.bwashcar.utility.LTNConstants;
@@ -113,7 +114,7 @@ public class ConfirmReserveActivity extends BaseActivity implements PullToRefres
         String sessionKey = LTNApplication.getInstance().getSessionKey();
 
         mReqParams.put(LTNConstants.STATUS, "0");
-        mReqParams.put(LTNConstants.SHOP_ID, "100001");
+        mReqParams.put(LTNConstants.COMPANY_ID, "" + User.getUserInstance().getUserInfo().getCompanyId());
         mReqParams.put(LTNConstants.SESSION_KEY, sessionKey);
         // TODO: 上传location
 
@@ -181,18 +182,17 @@ public class ConfirmReserveActivity extends BaseActivity implements PullToRefres
 
         HashMap<String, String> mReqParams = new HashMap();
         mReqParams.put(LTNConstants.CLIENT_TYPE_PARAM, LTNConstants.CLIENT_TYPE_MOBILE);
-
         mReqParams.put(LTNConstants.CURRENT_PAGE, "0");
-        mReqParams.put(LTNConstants.SHOP_ID, "100001");
+        mReqParams.put(LTNConstants.COMPANY_ID, "" + User.getUserInstance().getUserInfo().getCompanyId());
+        //mReqParams.put(LTNConstants.SHOP_ID, "100001");
         mReqParams.put(LTNConstants.STATUS, "0");
         mReqParams.put(LTNConstants.PAGE_SIZE, String.valueOf(LTNConstants.PAGE_COUNT + page * LTNConstants.PAGE_COUNT));
-        String sessionKey = LTNApplication.getInstance().getSessionKey();
-        if (sessionKey != null) {
-            mReqParams.put(LTNConstants.SESSION_KEY, sessionKey);
-        }
+
+        mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
+        
         // TODO: 上传location
 
-        WCOKHttpClient.getOkHttpClient().requestAsyn(LTNConstants.ACCESS_URL.GET_SHOPS_URL, WCOKHttpClient.TYPE_GET, mReqParams,
+        WCOKHttpClient.getOkHttpClient().requestAsyn(LTNConstants.ACCESS_URL.GET_BRSERVE_URL, WCOKHttpClient.TYPE_GET, mReqParams,
                 new ReqCallBack<JSONObject>() {
 
                     @Override
@@ -270,10 +270,9 @@ public class ConfirmReserveActivity extends BaseActivity implements PullToRefres
 
         mReqParams.put(LTNConstants.UPDATED_STATUS, "1");
 
-        String sessionKey = LTNApplication.getInstance().getSessionKey();
-        if (sessionKey != null) {
-            mReqParams.put(LTNConstants.SESSION_KEY, sessionKey);
-        }
+
+        mReqParams.put(LTNConstants.SESSION_KEY, LTNApplication.getInstance().getSessionKey());
+
 
         WCOKHttpClient.getOkHttpClient().requestAsyn(LTNConstants.ACCESS_URL.CONFIRM_BRSERVE_URL,
                 WCOKHttpClient.TYPE_GET, mReqParams,
